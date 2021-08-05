@@ -8,6 +8,7 @@ const hbs = exphbs.create({});
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+// sets up an Express.js session and connecti it sequelize db
 const sess = {
   secret: 'Super secret secret',
   cookie: {},
