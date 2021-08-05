@@ -1,3 +1,8 @@
+Description : 
+Our goal is for a user who plays/ interested in  Hearthstone, to create his own account and personalize  according to his favorites . He could comment on cards or view other's comments. He is able  log in with a username and pwd , Once authneticated a session is created that allows to query the db.
+
+
+
 Dependencies  installed:
 *   Sequelize ORM  sits between the server's API endpoints and the SQL database to   translate data between JavaScript and SQL.
 *   Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env. 
