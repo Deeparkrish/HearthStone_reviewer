@@ -1,2 +1,4 @@
-DROP DATABASE IF EXISTS hearthstone_card_db;
-CREATE DATABASE hearthstone_card_db;
+-- Database definitions go here 
+DROP DATABASE IF EXISTS hearthstone_cards_db;
+
+CREATE DATABASE hearthstone_cards_db;
