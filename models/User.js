@@ -19,13 +19,7 @@ User.init(
       // turn on auto increment
       autoIncrement: true,
     },
-    favorite_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "user",
-        key: "id",
-      },
-    },
+
     // define a username column
     username: {
       type: DataTypes.STRING,
