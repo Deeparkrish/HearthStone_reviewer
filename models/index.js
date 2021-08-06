@@ -1,16 +1,11 @@
 // Import all models
-const Cards = require('./Cards');
-const Comment = require('./Comment');
-const User = require('./User');
+const Card = require("./Card");
+const Comment = require("./Comment");
+const User = require("./User");
 
-// Create Associations 
-Comment.oneToMany(ForeignKeyToCard);
+// Create Associations
+Comment.belongsTo(Card);
+Card.hasMany(Comment);
+//need to create favorites table and then create association
 
-Cards.hasOne(Comment);
-
-User.
-
-
-
-
-module.exports = { User };
+module.exports = { User, Comment, Card };
