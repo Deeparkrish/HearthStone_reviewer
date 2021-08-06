@@ -5,6 +5,9 @@ const User = require("./User");
 const Favorite = require("./Favorite");
 
 // Create Associations
+User.hasMany(Comment, {
+  foreignKey: "user_id",
+});
 Comment.belongsTo(Card, {
   foreignKey: "card_id",
   onDelete: "SET NULL",
@@ -14,13 +17,19 @@ Comment.belongsTo(User, {
   onDelete: "SET NULL",
 });
 Card.hasMany(Comment, {
-  foreignKey: "card",
+  foreignKey: "card_id",
   onDelete: "SET NULL",
 });
-Favorite.belongsToMany(User); //this creates a manyToMany relationship
-Favorite.belongsToMany(Card);
-User.hasMany(Comment, {
+Card.belongsToMany(User, {
   foreignKey: "user_id",
+});
+Favorite.belongsToMany(User, {
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
+});
+Favorite.belongsToMany(Card, {
+  foreignKey: "card_id",
+  onDelete: "CASCADE",
 });
 
 module.exports = { User, Comment, Card, Favorite };
