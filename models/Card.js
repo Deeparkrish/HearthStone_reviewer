@@ -12,10 +12,16 @@ Card.init(
       autoIncrement: true,
     },
     // Need ID from API
-    apiId: {
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "card",
+        key: "id",
+      },
+    },
+    api_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
     },
   },
   {

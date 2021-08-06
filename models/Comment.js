@@ -9,20 +9,23 @@ Comment.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
+      autoIncrement: true,
     },
-    comment: {
+    comment_text: {
       type: DataTypes.STRING,
       allowNull: false,
-      primaryKey: true,
+      validate: {
+        len: [1],
+      },
     },
-    userId: {
+    user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: "user",
         key: "id",
       },
     },
-    cardId: {
+    card_id: {
       type: DataTypes.INTEGER,
       references: {
         model: "card",
