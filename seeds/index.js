@@ -8,4 +8,14 @@ sequelize.sync({ force: false }).then(() => {
     password: "password",
   };
   db.User.create(user);
+  const card = {
+    apiId: "EX1_116",
+  };
+  db.Card.create(card);
+
+  const userComment = {
+    comment: "testComment1",
+    cardId: 1, //test
+  };
+  db.Comment.create(userComment);
 });

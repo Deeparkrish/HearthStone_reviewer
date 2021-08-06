@@ -5,10 +5,11 @@ class User extends Model {}
 
 Cards.init(
   {
-    cardId: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
+      autoIncrement: true,
     },
     // Need ID from API
     apiId: {
