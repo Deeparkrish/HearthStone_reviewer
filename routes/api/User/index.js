@@ -1,11 +1,12 @@
 const router = require("express").Router();
-
+const userController = require("../../../controllers/User");
 // route matches /api/user
 router
   .route("/")
-  .post
-  //call User controller to create user
-  ()
+  .post(
+    //call User controller to create user
+    userController.createUser
+  )
   .put
   //authenticate user
   ();
