@@ -1,22 +1,15 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Comment extends Model {}
+class Favorite extends Model {}
 
-Comment.init(
+Favorite.init(
   {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
-    },
-    comment_text: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1],
-      },
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -33,18 +26,13 @@ Comment.init(
       },
     },
   },
-
   {
     sequelize,
-    // don't automatically create createdAt/updatedAt timestamp fields
     timestamps: false,
-    // don't pluralize name of database table
     freezeTableName: true,
-    // use underscores instead of camel-casing (i.e. `comment_text` and not `commentText`)
     underscored: true,
-    // make it so our model name stays lowercase in the database
-    modelName: "comment",
+    modelName: "favorite",
   }
 );
 
-module.exports = Comment;
+module.exports = Favorite;

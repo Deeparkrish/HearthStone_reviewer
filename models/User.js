@@ -1,6 +1,8 @@
 //import the Model class and DataTypes object from Sequelize.
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const bcrypt = require('bcrypt');
+
 
 // create our User model-inherits all of the functionality the Model class has.
 class User extends Model {}
@@ -46,8 +48,7 @@ User.init(
       }
   },
   {
-    // TABLE CONFIGURATION OPTIONS GO HERE (https://sequelize.org/v5/manual/models-definition.html#configuration))
-
+    // TABLE CONFIGURATION OPTIONS GO HERE 
     // pass in our imported sequelize connection (the direct connection to our database)
     sequelize,
     // don't automatically create createdAt/updatedAt timestamp fields

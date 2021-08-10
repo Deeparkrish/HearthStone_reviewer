@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Comment extends Model {}
+class Card extends Model {}
 
-Comment.init(
+Card.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,29 +11,19 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    comment_text: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1],
-      },
-    },
+    // Need ID from API
     user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "user",
-        key: "id",
-      },
-    },
-    card_id: {
       type: DataTypes.INTEGER,
       references: {
         model: "card",
         key: "id",
       },
     },
+    api_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   },
-
   {
     sequelize,
     // don't automatically create createdAt/updatedAt timestamp fields
@@ -43,8 +33,8 @@ Comment.init(
     // use underscores instead of camel-casing (i.e. `comment_text` and not `commentText`)
     underscored: true,
     // make it so our model name stays lowercase in the database
-    modelName: "comment",
+    modelName: "card",
   }
 );
 
-module.exports = Comment;
+module.exports = Card;
