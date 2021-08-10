@@ -1,8 +1,13 @@
 //import the Model class and DataTypes object from Sequelize.
+<<<<<<< HEAD
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
 
+=======
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
+>>>>>>> 7216d39e56e60a69e8b009819be48f97b51e6f30
 
 // create our User model-inherits all of the functionality the Model class has.
 class User extends Model {}
@@ -10,42 +15,49 @@ class User extends Model {}
 // define table columns and configuration
 User.init(
   {
-     // define an id column
-     id: {
-        // use the special Sequelize DataTypes object provide what type of data it is
-        type: DataTypes.INTEGER,
-        // this is the equivalent of SQL's `NOT NULL` option
-        allowNull: false,
-        // instruct that this is the Primary Key
-        primaryKey: true,
-        // turn on auto increment
-        autoIncrement: true
+    // define an id column
+    id: {
+      // use the special Sequelize DataTypes object provide what type of data it is
+      type: DataTypes.INTEGER,
+      // this is the equivalent of SQL's `NOT NULL` option
+      allowNull: false,
+      // instruct that this is the Primary Key
+      primaryKey: true,
+      // turn on auto increment
+      autoIncrement: true,
+    },
+    favorite_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id",
       },
-      // define a username column
-      username: {
-        type: DataTypes.STRING,
-        allowNull: false
+    },
+    // define a username column
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    // define an email column
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      // there cannot be any duplicate email values in this table
+      unique: true,
+      // if allowNull is set to false, we can run our data through validators before creating the table data
+      validate: {
+        isEmail: true,
       },
-      // define an email column
-      email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        // there cannot be any duplicate email values in this table
-        unique: true,
-        // if allowNull is set to false, we can run our data through validators before creating the table data
-        validate: {
-          isEmail: true
-        }
+    },
+    // define a password column
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        // this means the password must be at least eight characters long
+        len: [8],
       },
-      // define a password column
-      password: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          // this means the password must be at least eight characters long
-          len: [8]
-        }
-      }
+    },
   },
   {
     // TABLE CONFIGURATION OPTIONS GO HERE 
@@ -58,7 +70,7 @@ User.init(
     // use underscores instead of camel-casing (i.e. `comment_text` and not `commentText`)
     underscored: true,
     // make it so our model name stays lowercase in the database
-    modelName: 'user'
+    modelName: "user",
   }
 );
 
