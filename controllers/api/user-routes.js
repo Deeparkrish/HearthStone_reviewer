@@ -1,11 +1,12 @@
+//dImport dependencies needed 
 const router = require("express").Router();
 const { User } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-// GET /api/users
+// GET /api/users- all user data 
 router.get("/", (req, res) => {
   User.findAll({
-    attributes: { exclude: ["password"] },
+    attributes: { exclude: ["password"] }, // hide the password detail 
   })
     .then((dbUserData) => res.json(dbUserData))
     .catch((err) => {
@@ -14,15 +15,16 @@ router.get("/", (req, res) => {
     });
 });
 
-// GET /api/users/1
+// GET /api/users/1 - user data by id 
 router.get("/:id", (req, res) => {
   User.findOne({
-    attributes: { exclude: ["password"] },
+    attributes: { exclude: ["password"] },// hide the password detail 
     where: {
       id: req.params.id,
     },
   })
     .then((dbUserData) => {
+      // If id not found 
       if (!dbUserData) {
         res.status(404).json({ message: "No user found with this id" });
         return;
@@ -35,7 +37,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-// POST /api/users
+// POST /api/users - add a new usew
 router.post("/", (req, res) => {
   User.create({
     username: req.body.username,
@@ -57,7 +59,7 @@ router.post("/", (req, res) => {
     });
 });
 
-// PUT /api/users/1
+// PUT /api/users/1 - update a user details 
 router.put("/:id", withAuth, (req, res) => {
   // if req.body has exact key/value pairs to match the model, you can just use `req.body` instead
   User.update(req.body, {
@@ -88,6 +90,7 @@ router.delete("/:id", withAuth, (req, res) => {
     },
   })
     .then((dbUserData) => {
+      // if id not found 
       if (!dbUserData) {
         res.status(404).json({ message: "No user found with this id" });
         return;
@@ -100,6 +103,8 @@ router.delete("/:id", withAuth, (req, res) => {
     });
 });
 
+
+// User login 
 router.post("/login", (req, res) => {
   // expects the user email upon login
   User.findOne({

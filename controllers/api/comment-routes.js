@@ -1,10 +1,11 @@
-const sequelize = require('../../config/connection');
-const router = require('express').Router();
+// import dependences 
+const sequelize = require('../../config/connection'); // connection  to db 
+const router = require('express').Router();  
 
-const { User, Card, Comment } = require('../../models');
-const withAuth = require('../../utils/auth');
+const { User, Card, Comment } = require('../../models'); // Import the models needed 
+const withAuth = require('../../utils/auth'); // import the authnetication function 
 
-// Get all comments 
+// Get all comments - based on most recent one 
 router.get('/', (req, res) => {
     Comment.findAll({
         order: [['createdAt', 'DESC']],
@@ -16,7 +17,7 @@ router.get('/', (req, res) => {
       'updatedAt'
     ],
     include: [
-      // include the Comment model here:
+      // include the Card details here:
       {
         model: Card,
         attributes: ['id'],
@@ -24,21 +25,25 @@ router.get('/', (req, res) => {
           model: User,
           attributes: ['username']
         }
+      },//User how made te comment 
+      {
+        model :User,
+        attributes :['username']
       }
     ]
       }
     )
-      .then(dbCommentData => res.json(dbCommentData))
-      .catch(err => {
+    .then(dbCommentData => res.json(dbCommentData))
+    .catch(err => {
         console.log(err);
         res.status(500).json(err);
       });
 });
 
-//Create a comment 
+//Add a comment 
 router.post('/',withAuth, (req, res) => {
   // check if  user is logged in 
-  if (req.session) {
+if (req.session) {
   Comment.create({
         comment_text: req.body.comment_text,
         // get user id for the session 
@@ -53,13 +58,13 @@ router.post('/',withAuth, (req, res) => {
   }
 });
 
-//get Comment by id 
+//get Comment by id  and  the card associated with comments and user who posted it 
 router.get('/:id', (req, res) => {
     Comment.findOne({
       where: {
         id: req.params.id
       },
-      attributes: ['id', 'comment_text','user_id ','createdAt'],
+      attributes: ['id', 'comment_text','user_id','createdAt'],
       include: [
         {
           model: User,
