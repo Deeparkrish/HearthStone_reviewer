@@ -3,11 +3,15 @@ const Card = require("./Card");
 const Comment = require("./Comment");
 const User = require("./User");
 const Favorite = require("./Favorite");
+const { hasMany } = require("./Card");
 
 // Create Associations
 User.hasMany(Comment, {
   foreignKey: "user_id",
 });
+User.hasMany(Card,{
+  foreignKey:"user_id",
+})
 Comment.belongsTo(Card, {
   foreignKey: "card_id",
   onDelete: "SET NULL",
@@ -20,9 +24,10 @@ Card.hasMany(Comment, {
   foreignKey: "card_id",
   onDelete: "SET NULL",
 });
-// // Card.belongsToMany(User, {
-// //   foreignKey: "user_id",
-// // });
+Card.belongsToMany(User, {
+    through:Card,
+    foreignKey: "card_id",
+});
 // Favorite.belongsToMany(User, {
 //   foreignKey: "user_id",
 //   onDelete: "CASCADE",
