@@ -20,16 +20,16 @@ Card.hasMany(Comment, {
   foreignKey: "card_id",
   onDelete: "SET NULL",
 });
-Card.belongsToMany(User, {
-  foreignKey: "user_id",
-});
-Favorite.belongsToMany(User, {
-  foreignKey: "user_id",
-  onDelete: "CASCADE",
-});
-Favorite.belongsToMany(Card, {
-  foreignKey: "card_id",
-  onDelete: "CASCADE",
-});
+// // Card.belongsToMany(User, {
+// //   foreignKey: "user_id",
+// // });
+// Favorite.belongsToMany(User, {
+//   foreignKey: "user_id",
+//   onDelete: "CASCADE",
+// });
+// Favorite.belongsToMany(Card, {
+//   foreignKey: "card_id",
+//   onDelete: "CASCADE",
+// });
 
 module.exports = { User, Comment, Card, Favorite };
