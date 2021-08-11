@@ -82,7 +82,7 @@ User.init(
     underscored: true,
     // make it so our model name stays lowercase in the database
     modelName: "user",
+    
   }
 );
-
 module.exports = User;
