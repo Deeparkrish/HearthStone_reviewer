@@ -10,21 +10,21 @@ Favorite.init(
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
-    },
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "user",
-        key: "id",
-      },
-    },
-    card_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "card",
-        key: "id",
-      },
-    },
+    }, // delete, because association creates these columns
+    // user_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: "user",
+    //     key: "id",
+    //   },
+    // },
+    // card_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: "card",
+    //     key: "id",
+    //   },
+    // },
   },
   {
     sequelize,

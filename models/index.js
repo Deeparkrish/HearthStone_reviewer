@@ -9,9 +9,10 @@ const { hasMany } = require("./Card");
 User.hasMany(Comment, {
   foreignKey: "user_id",
 });
-User.hasMany(Card,{
-  foreignKey:"user_id",
-})
+User.hasMany(Card, {
+  foreignKey: "user_id",
+});
+User.hasMany(Favorite);
 Comment.belongsTo(Card, {
   foreignKey: "card_id",
   onDelete: "SET NULL",
@@ -25,16 +26,18 @@ Card.hasMany(Comment, {
   onDelete: "SET NULL",
 });
 Card.belongsToMany(User, {
-    through:Card,
-    foreignKey: "card_id",
+  through: Card,
+  foreignKey: "card_id",
 });
-// Favorite.belongsToMany(User, {
-//   foreignKey: "user_id",
-//   onDelete: "CASCADE",
-// });
-// Favorite.belongsToMany(Card, {
-//   foreignKey: "card_id",
-//   onDelete: "CASCADE",
-// });
+Favorite.belongsTo(User, {
+  through: Favorite,
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
+});
+Favorite.belongsTo(Card, {
+  through: Favorite,
+  foreignKey: "card_id",
+  onDelete: "CASCADE",
+});
 
 module.exports = { User, Comment, Card, Favorite };
