@@ -2,6 +2,8 @@ const sequelize = require("../config/connection");
 const seedUsers = require("./user-seeds");
 const seedCards = require("./card-seeds");
 const seedComments = require("./comment-seeds");
+const seedFavorites = require("./favorite-seeds");
+
 
 
 const seedAll = async () => {
@@ -13,6 +15,9 @@ const seedAll = async () => {
   console.log("----******Card seeded*****----------");
   await seedComments();
   console.log("----******Comment seeded*****----------");
+  //add fav
+  await seedFavorites();
+  console.log("----******Favorite seeded*****----------");
   process.exit(0);
 };
 
