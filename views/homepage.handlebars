@@ -1,22 +1,12 @@
-{{!-- <div>
-  <ol class="post-list">
-  {{#each posts as |post|}}
+{{!-- Post - partial filename and object  --}}
+{{!-- When we pass the post object into the partial, we don't pass the object as is 
+but rather pass in all of the properties of that object. --}}
+<ul class="post-list">
+  {{#each comments as |comment|}}
   <li>
-    <article class="post">
-      <div class="title">
-        <a href="{{post.post_url}}" target="_blank">{{post.title}}</a>
-        <span>({{post.post_url}})</span>
-      </div>
-      <div class="meta">
-        {{post.vote_count}} point(s) by {{post.user.username}} on
-        {{post.created_at}}
-        |
-        <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
-      </div>
-    </article>
+    {{> comment-info comment }}
   </li>
-    {{/each}}
-
-</ol>
-</div> --}}
-{{!-- // This page will have list of commens organized by date ,  topic  and user who made comment  --}}
+  {{else}}
+<h6 class="pb-4 has-text-centered is-italic">No reviews found!</h6>
+  {{/each}}
+</ul>

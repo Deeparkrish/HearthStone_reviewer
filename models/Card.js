@@ -1,11 +1,11 @@
-// Created by -Deepa , Jessica and Dyravuth 
-// Install dependencies 
+// created by - Dyravuth Yorn 
+// Import Dependencies 
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
-// Instantiate model class 
-class Comment extends Model {}
+// Instnatiate the cards
+class Card extends Model {}
 
-Comment.init( // column definitions 
+Card.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -13,44 +13,31 @@ Comment.init( // column definitions
       primaryKey: true,
       autoIncrement: true,
     },
-    // the comment text to provided by the user 
-    comment_text: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1],
-      },
-    },
-    // The user who posts the comment 
     user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "user",
-        key: "id",
-      },
-    },
-    // the card the comment belongs to 
-    card_id: {
       type: DataTypes.INTEGER,
       references: {
         model: "card",
         key: "id",
       },
     },
-  },
+        // Need ID from API
 
+    api_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+  },
   {
-    // table Definitions 
     sequelize,
     // don't automatically create createdAt/updatedAt timestamp fields
-    timestamps: true,
+    timestamps: false,
     // don't pluralize name of database table
     freezeTableName: true,
     // use underscores instead of camel-casing (i.e. `comment_text` and not `commentText`)
     underscored: true,
     // make it so our model name stays lowercase in the database
-    modelName: "comment",
+    modelName: "card",
   }
 );
 
-module.exports = Comment;
+module.exports = Card;
