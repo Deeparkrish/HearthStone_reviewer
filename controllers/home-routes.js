@@ -8,43 +8,43 @@ const { Card, User, Comment,Favorite } = require('../models');
  // to be filled - by Dyravuth yorn 
 
 
-// //Get comments
-// router.get("/", (req, res) => {
-//   // Get all Comments
-//   Comment.findAll({
-//     attributes: ["id", "comment_text", "createdAt"],
-//     // Include card details
-//     include: [
-//       {
-//         model: Card,
-//         attributes: ["id", "user_id"],
-//         include: {
-//           model: User,
-//           attributes: ["username"],
-//         },
-//       },
-//       // User who made comment
-//       {
-//         model: User,
-//         attributes: ["username"],
-//       },
-//     ],
-//   })
-//     .then((dbCommentData) => {
-//       // Upon success, get the comments and render it on homepage
-//       const comments = dbcommentData.map((comment) =>
-//         comment.get({ plain: true })
-//       );
-//       res.render("homepage", {
-//         comments,
-//         loggedIn: req.session.loggedIn,
-//       });
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//       res.status(500).json(err);
-//     });
-// });
+//Get comments
+router.get("/", (req, res) => {
+  // Get all Comments
+  Comment.findAll({
+    attributes: ["id", "comment_text", "createdAt"],
+    // Include card details
+    include: [
+      {
+        model: Card,
+        attributes: ["id", "user_id"],
+        include: {
+          model: User,
+          attributes: ["username"],
+        },
+      },
+      // User who made comment
+      {
+        model: User,
+        attributes: ["username"],
+      },
+    ],
+  })
+    .then((dbCommentData) => {
+      // Upon success, get the comments and render it on homepage
+      const comments = dbCommentData.map((comment) =>
+        comment.get({ plain: true })
+      );
+      res.render("homepage", {
+        comments,
+        loggedIn: req.session.loggedIn,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 //Get comments
 router.get('/', (req, res) => {
