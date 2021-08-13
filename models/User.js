@@ -1,4 +1,4 @@
-//import the Model class and DataTypes object from Sequelize.
+//import the Model class and DataTypes object from Sequelize. - created by Deepa Krishnan 
 const { Model, DataTypes } = require("sequelize");
 const bcrypt = require("bcrypt");
 const sequelize = require("../config/connection");

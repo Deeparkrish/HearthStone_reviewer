@@ -1,3 +1,4 @@
+// Seeding done by Deepa 
 const sequelize = require("../config/connection");
 const seedUsers = require("./user-seeds");
 const seedCards = require("./card-seeds");

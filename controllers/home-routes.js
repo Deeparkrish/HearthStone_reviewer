@@ -1,9 +1,12 @@
-//dependcies  
+// getting the data for front end -  coding :Deepa 
+//dependencies   
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Card, User, Comment } = require('../models');
+const { Card, User, Comment,Favorite } = require('../models');
 
 // Home Page - Get all Cards  associated with user along with comments 
+ // to be filled - by Dyravuth yorn 
+
 
 
 //Get comments
@@ -13,14 +16,13 @@ Comment.findAll({
   attributes: [
     'id',
     'comment_text',
-    'createdAt',
-    
+    'user_id'
   ],
   // Include card details
   include: [
     {
       model: Card,
-      attributes: ['id', 'user_id'],
+      attributes: ['id'],
       include: {
         model: User,
         attributes: ['username']
@@ -33,22 +35,22 @@ Comment.findAll({
     }
   ]
 })
-  .then(dbCommentData => {
+.then(dbCommentData =>{
     // Upon success,Get the comments  and render it on homepage 
-    const comments = dbcommentData.map(comment => comment.get({ plain: true }));
+    const comments = dbCommentData.map(comment => comment.get({ plain: true }));
     res.render('homepage', {
         comments,
         loggedIn: req.session.loggedIn
       });
-  })
-  .catch(err => {
+})
+.catch(err => {
     console.log(err);
     res.status(500).json(err);
-  });
+});
 });
 
 //Render a single comment  Page
-router.get('/comment/:id', (req, res) => {
+router.get('/comments/:id', (req, res) => {
   Comment.findOne({
     where: {
       id: req.params.id
@@ -60,8 +62,8 @@ router.get('/comment/:id', (req, res) => {
     ],
     include: [
       {
-        model: Comment,
-        attributes: ['id','card_id', 'user_id'],
+        model: Card,
+        attributes: ['id', 'user_id'],
         include: {
           model: User,
           attributes: ['username']

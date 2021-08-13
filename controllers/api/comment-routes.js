@@ -5,7 +5,8 @@ const router = require('express').Router();
 const { User, Card, Comment } = require('../../models'); // Import the models needed 
 const withAuth = require('../../utils/auth'); // import the authnetication function 
 
-// Get all comments - based on most recent one 
+//created and tested on insomnia - by Deepa Krishnan 
+// Get all comments - based on most recent one  
 router.get('/', (req, res) => {
     Comment.findAll({
         order: [['createdAt', 'DESC']],

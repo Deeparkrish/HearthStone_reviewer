@@ -1,6 +1,8 @@
+// created by - Dyravuth Yorn 
+// Import Dependencies 
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
-
+// Instnatiate the cards
 class Card extends Model {}
 
 Card.init(
