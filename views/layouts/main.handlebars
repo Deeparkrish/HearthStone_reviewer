@@ -4,27 +4,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project 2</title>
-  <link rel="stylesheet" href= "/stylesheets/style.css">
+  <title>HEARThstone</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image" href="/assets/images/hearthstone-logo.png">
+  <!-- Link to CSS file -->
+  <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 
 <body>
   <div class="wrapper">
     <header>
       <h1>
-        <a href="/">project 2</a>
+        <a href="/">HEARThstone</a>
       </h1>
-      <nav>
-      <a href="/login">login</a>
-    </nav>
+      <nav class="navbar mt-2">
+        {{#if loggedIn}}
+        <a href="/" class="navbar-item is-hoverable pt-1">Homepage</a>
+        <a href="/dashboard" class="navbar-item is-hoverable pt-1">Dashboard</a>
+        <button id="logout" class="button is-danger">Logout</button>
+        {{else}}
+        <a href="/" class="navbar-item is-hoverable pt-1">Homepage</a>
+        <a href="/dashboard" class="navbar-item is-hoverable pt-1">Dashboard</a>
+        <button id="/login" class="button is-primary">Login</button>
+        {{/if}}
+      </nav>
     </header>
+
     <main>
       {{{ body }}}
     </main>
-    <footer>
-      Thanks for visiting!
+
+    <footer class="footer">
+      <div class="footer_text-box">
+        <p id="footer_text">© 2021 Deepa Krishnan, Dyravuth Yorn, Jessica Kelley, Jorge Roldan</p>
+      </div>
     </footer>
-  </div>
 
 </body>
 
