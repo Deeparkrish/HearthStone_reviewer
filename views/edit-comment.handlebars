@@ -1,0 +1,21 @@
+<article>
+  <a href="/dashboard" class="is-pulled-right"> &larr; back to dashboard</a>
+  <h2 class="title mt-5">edit comment</h2><hr>
+  <form class="edit-comment-form">
+    <div>
+        <label for="comment-text">Your comment:</label>
+      <input class="textarea" name="comment-text" type="text" value="{{comment.comment_text}}" />
+    </div>
+    <div class="is-pulled-right">
+       created on {{format_date comment.createdAt}}
+    </div>
+    <button type="submit" class="button is-success">save </button>
+    <button type="button" class="button is-danger delete-comment-btn">delete </button>
+  </form>
+</article>
+
+{{!-- {{> comments }} --}}
+
+<script src="/javascript/edit-comment.js"></script>
+<script src="/javascript/delete-comment.js"></script>
+{{!-- <script src="/javascript/comment.js"></script> --}}
