@@ -11,7 +11,7 @@ Dependencies installed:
 * The express-session library allows us to connect to the back end. The connect-session-sequelize library automatically stores the sessions created by express-session into our database.
 * Template engines allow you to write HTML code.Handlebars is a simple templating language. It uses a template and an input object to generate HTML or other text formats.They are used to deliver front-end app.
 * bcrypt -A library to help you hash passwords.
-*  Axios to fetch card data from back end 
+* Axios to fetch card data from back end 
 
 
 <<<<<<< HEAD
