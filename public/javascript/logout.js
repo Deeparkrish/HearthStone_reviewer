@@ -1,17 +1,15 @@
-// Created by Deepa 
-// async function to log out of asession  
 async function logout() {
-    // call the fetch and let back end know to terminate session
     const response = await fetch('/api/users/logout', {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' }
+        method: 'post',
+        headers: { 'Content-Type': 'application/json' }
     });
-  // If ok response
+
     if (response.ok) {
-      document.location.replace('/'); // go to homepage 
+        console.log("You are logged out!");
+        document.location.replace('/');
     } else {
-      alert(response.statusText); // State unable to logout 
+        alert(response.statusText);
     }
-  }
-  // Event handler function is called whrn logout button is clicked 
-  document.querySelector('#logout').addEventListener('click', logout);
+}
+
+document.querySelector('#logout').addEventListener('click', logout);
