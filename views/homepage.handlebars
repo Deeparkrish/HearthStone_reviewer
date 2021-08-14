@@ -1,22 +1,28 @@
-{{!-- <div>
+<div>
   <ol class="post-list">
-  {{#each posts as |post|}}
+  {{#each comments as |comment|}}
   <li>
     <article class="post">
       <div class="title">
-        <a href="{{post.post_url}}" target="_blank">{{post.title}}</a>
-        <span>({{post.post_url}})</span>
+        <span>({{comment.comment_text}})</span>
       </div>
       <div class="meta">
-        {{post.vote_count}} point(s) by {{post.user.username}} on
-        {{post.created_at}}
+         by {{comment.user.username}} on
+        {{comment.createdAt}}
         |
-        <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
+      </div>
+      {{#if comment.card.data.img}}
+      {{!-- html for img --}}
+      {{else}}
+      {{!-- html for no img --}}
+      {{/if}}
+      <div>
+        {{comment.card.data.name}}
       </div>
     </article>
   </li>
     {{/each}}
 
 </ol>
-</div> --}}
+</div>
 {{!-- // This page will have list of commens organized by date ,  topic  and user who made comment  --}}
