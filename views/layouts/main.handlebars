@@ -7,7 +7,7 @@
   <title>HEARThstone</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image" href="/assets/images/hearthstone-logo.png">
+  <link rel="icon" type="image" href="/assets/images/Hearthstone-symbol.png">
   <!-- Link to CSS file -->
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
@@ -16,23 +16,49 @@
   <div class="wrapper">
     <header>
       <h1>
-        <a href="/">HEARThstone</a>
+        <a href="/">Hearthstone Card Review</a>
       </h1>
       <nav class="navbar mt-2">
         {{#if loggedIn}}
-        <a href="/" class="navbar-item is-hoverable pt-1">Homepage</a>
-        <a href="/dashboard" class="navbar-item is-hoverable pt-1">Dashboard</a>
+        <button id="/" class="button is-primary">Homepage</button>
+        <!--<a href="/" class="button">Homepage</a>-->
+        <button id="/dashboard" class="button is-primary">Dashboard</button>
+        <!--<a href="/dashboard" class="button">Dashboard</a>-->
         <button id="logout" class="button is-danger">Logout</button>
         {{else}}
-        <a href="/" class="navbar-item is-hoverable pt-1">Homepage</a>
-        <a href="/dashboard" class="navbar-item is-hoverable pt-1">Dashboard</a>
+        <button id="/" class="button is-primary">Homepage</button>
+        <!--<a href="/" class="button">Homepage</a>-->
+        <button id="/dashboard" class="button is-primary">Dashboard</button>
+        <!--<a href="/dashboard" class="button">Dashboard</a>-->
         <button id="/login" class="button is-primary">Login</button>
+        <button id="/signup" class="button is-primary">Sign Up</button>
         {{/if}}
       </nav>
     </header>
 
+    <div class="container">
+      <header>
+        <h1 class="top-content">Welcome to the <a href="/"><img id="hearthstone-logo"
+              src="assets/images/Hearthstone_logo.png"></a>Card Review</h1>
+      </header>
+      <p>Hearthstone players and admirers alike can come here to learn about all of the cards Hearthstone has to offer
+      </p>
+    </div>
+
     <main>
-      {{{ body }}}
+      <div class="container">
+        <p>Search for card by name (case sensitive):</p>
+        <form method="POST" action="/api/cards/cardsearch/" autocomplete="off" spellcheck="false">
+          <input class="input-field" name="name">
+          <button class="search-button">Search</button type="button">
+        </form>
+        <p>View cards by class:</p>
+        <div class="heroes">
+          {{#each thisClass}}
+          <a href="/api/classes/showclass/{{{this.name}}}" class="text-links">{{this.name}}</a>
+          {{/each}}
+        </div>
+        {{{ body }}}
     </main>
 
     <footer class="footer">

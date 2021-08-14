@@ -1,178 +1,203 @@
 * {
-    box-sizing: border-box;
-  }
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  text-align: center;
+}
+
+.top-content {
+  margin: 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 45px;
+}
+
+#hearthstone-logo {
+  height: 100px;
+  margin: 0px 10px;
+}
+
+body {
+  background: #323232;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.navbar mt-2 {
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 90%;
+  margin: 0 auto;
+}
   
-  body, html {
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    font-family: sans-serif;
-    color: #333;
-  }
+a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  transition: color .1s;
+}
   
-  a {
-    text-decoration: none;
-    color: #225ca3;
-    font-weight: bold;
-    transition: color .1s;
-  }
+a:hover {
+  color: #af881c;
+}
   
-  a:hover {
-    color: #3486eb;
-  }
+button {
+  padding: 10px;
+  background: goldenrod;
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+  font-size: 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  border-style: 5px solid goldenrod;
+}
   
-  button {
-    background-color: #225ca3;
-    border: 0;
-    padding: 1%;
-    color: white;
-    font-weight: bold;
-    transition: background-color .1s;
-    cursor: pointer;
-    border-radius: 5px;
-  }
+button:hover {
+  background-color: #af881c;
+}
   
-  button:hover {
-    background-color: #3486eb;
-  }
+.post-list {
+  margin: 0;
+  padding: 0;
+}
   
-  .post-list {
-    margin: 0;
-    padding: 0;
-  }
+textarea, input {
+  padding: .5%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+textarea:focus, input:focus {
+  outline: none;
+  border: 1px solid #3486eb;
+}
   
-  textarea, input {
-    padding: .5%;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
+textarea {
+  min-width: 40%;
+  min-height: 100px;
+}
   
-  textarea:focus, input:focus {
-    outline: none;
-    border: 1px solid #3486eb;
-  }
+form > div {
+  margin-bottom: 2%;
+}
   
-  textarea {
-    min-width: 40%;
-    min-height: 100px;
-  }
+form label {
+  display: block;
+}
   
-  form > div {
-    margin-bottom: 2%;
-  }
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
   
-  form label {
-    display: block;
-  }
+header {
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1%;
+}
   
-  .wrapper {
-    width: 100%;
-    min-height: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-  }
+header h1 {
+  font-size: 1em;
+}
   
-  header {
-    border-bottom: 1px solid #ccc;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1%;
-  }
+main {
+  flex: 1;
+  padding: 2% 4%;
+}
   
-  header h1 {
-    font-size: 1em;
-  }
+.btn-no-style {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none;
+  color: #225ca3;
+  font-size: 100%;
+  font-weight: bold;
+  transition: color .1s;
+  margin-left: 16px;
+}
   
-  main {
-    flex: 1;
-    padding: 2% 4%;
-  }
+.btn-no-style:hover {
+  background: none;
+  color: #3486eb;
+}
   
-  .btn-no-style {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    text-decoration: none;
-    color: #225ca3;
-    font-size: 100%;
-    font-weight: bold;
-    transition: color .1s;
-    margin-left: 16px;
-  }
+.delete-post-btn {
+  background-color: #d41414;
+}
   
-  .btn-no-style:hover {
-    background: none;
-    color: #3486eb;
-  }
+.delete-post-btn:hover {
+  background-color: #ff643d;
+}
   
-  .delete-post-btn {
-    background-color: #d41414;
-  }
+.post {
+  margin-bottom: 2%;
+  line-height: 150%;
+}
   
-  .delete-post-btn:hover {
-    background-color: #ff643d;
-  }
+.post .title span {
+  font-style: italic;
+  font-size: 90%;
+  color: #7d7d7d;
+}
   
-  .post {
-    margin-bottom: 2%;
-    line-height: 150%;
-  }
+.edit-link {
+  display: block;
+  margin: -1.5% 0 2% 0;
+}
   
-  .post .title span {
-    font-style: italic;
-    font-size: 90%;
-    color: #7d7d7d;
-  }
+.comment-form {
+  margin-bottom: 5%;
+}
   
-  .edit-link {
-    display: block;
-    margin: -1.5% 0 2% 0;
-  }
+.comment {
+  padding: 1%;
+  margin-bottom: 1%;
+}
   
-  .upvote-btn {
-    background-color: #197d0f;
-    transition: background-color .1s;
-  }
+.comment:nth-child(odd) {
+  background-color: #fff5eb;
+}
   
-  .upvote-btn:hover {
-    background-color: #1f9c13;
-  }
+.comment .meta {
+  font-size: 90%;
+  margin-bottom: .5%;
+  opacity: .6;
+}
   
-  .comment-form {
-    margin-bottom: 5%;
-  }
+.new-post-form input {
+  width: 300px;
+}
   
-  .comment {
-    padding: 1%;
-    margin-bottom: 1%;
-  }
+.edit-post-form {
+  margin-bottom: 5%;
+}
   
-  .comment:nth-child(odd) {
-    background-color: #fff5eb;
-  }
-  
-  .comment .meta {
-    font-size: 90%;
-    margin-bottom: .5%;
-    opacity: .6;
-  }
-  
-  .new-post-form input {
-    width: 300px;
-  }
-  
-  .edit-post-form {
-    margin-bottom: 5%;
-  }
-  
-  footer {
-    border-top: 1px solid #ccc;
-    display: flex;
-    justify-content: center;
-    padding: 1%;
-    font-size: 110%;
-  }
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100;
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+  font-size: 10px; 
+}
