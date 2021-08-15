@@ -7,7 +7,7 @@
     {{#each comments as |comment|}}
         <div>
         {{> comment-info comment}}        
-         <a href="/dashboard/edit/{{comment.id}}"><button class="button mb-5 ml-5 is-warning">edit</button></a>
+        <a href="/dashboard/edit/{{comment.id}}"><button class="button mb-5 ml-5 is-warning">edit post</button></a>
         </div>
     {{/each}}
 {{else}}
