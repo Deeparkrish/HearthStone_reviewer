@@ -73,6 +73,7 @@ Our goal is for a user who plays/ interested in Hearthstone, to create his own a
   ## ModelAssociations
   ![Webpage]()
   
+  ## Process 
   
   ## Testing
   ####  CRUD operations can be testted using following applications:
@@ -80,7 +81,7 @@ Our goal is for a user who plays/ interested in Hearthstone, to create his own a
     link : http://localhost:3000/api/<routes>
   
   ##  ProjectRepo 
-  Heroku: https://deepa-tech-blog.herokuapp.com/
+  Heroku: 
 
   ## Contribution
   Created with ❤️ by [Deepa Krishnan, Dyravuth Yorn, Jessica Kelly and Jorge Roldan](https://github.com/DeeparKrish/README-generator)
