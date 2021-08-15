@@ -38,7 +38,7 @@ router.get('/', withAuth, (req, res) => {
       const comments = dbCommentData.map((comment) =>
         comment.get({ plain: true })
       );
-      res.render("homepage", {
+      res.render("dashboard", {
         comments,
         loggedIn: req.session.loggedIn,
       });
