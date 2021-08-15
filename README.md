@@ -74,7 +74,23 @@ Our goal is for a user who plays/ interested in Hearthstone, to create his own a
   ![Webpage](https://github.com/Deeparkrish/HearthStone_reviewer/blob/develop/src/assets/images/Model%20association.png)
   
   ## Process 
-  
+   When an end-user - a hearthstone fan visits a  CMS-style blog site, 
+  * He presented with the homepage, which includes various haerthstone cards and  user comments if any have been posted; 
+    navigation links for the homepage and the option to log in
+  * Upon choosingthe homepage option,the user is taken to the homepage.
+  * The user chan click om any other links in the navigation like login or Sign up
+  * If the user chooses to sign up, he is prompted to create a username and password
+  * When he clicks on the sign-up button, the user credentials are saved and I am logged into the site
+  * When he revisits the site at a later time and choose to sign in,he will be prompted to enter my username and password
+  * Once signed in,he sees navigation links for the homepage, the dashboard, and the option to log out
+  * When he clicks  on the homepage option in the navigation he is taken to the homepage and presented with cards and their corresponding comments that include,
+    the comment, username and the date created.
+  * When the user clicks on the dashboard he is presented with any comments he had already created, his cards and an option to add a new comment.
+  * Upon clicking the button to add a new comment, he will prompted to enter carid and  his comments  for the card, hit the create button
+    and the contents entered are saved as a new comment.
+  * The user can delete or update his comment and the dashboard is updated accordingly.
+  * the user is logged out of the site either by clicking logout button or if the session is inactive for a long time.
+    
   ## Testing
   ####  CRUD operations can be testted using following applications:
     Insomnia core / Postman  or your browser 
