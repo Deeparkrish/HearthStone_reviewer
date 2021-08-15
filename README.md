@@ -76,7 +76,7 @@ Our goal is for a user who plays/ interested in Hearthstone, to create his own a
   Heroku: https://deepa-tech-blog.herokuapp.com/
 
   ## Contribution
-  Created with ❤️ by [Deepa Krishnan, Dyravuth Yorn, Jessica Kelly and Jroge Roldan](https://github.com/DeeparKrish/README-generator)
+  Created with ❤️ by [Deepa Krishnan, Dyravuth Yorn, Jessica Kelly and Jorge Roldan](https://github.com/DeeparKrish/README-generator)
   </br>
   Credits :MVC - Controller module 
   The JSON files contain data that is Copyright © Blizzard Entertainment - All Rights Reserved
