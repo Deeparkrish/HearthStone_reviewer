@@ -1,3 +1,25 @@
+# HearthStone_ Reviewer
+  <p align="left">
+    <img src="https://img.shields.io/github/repo-size/deeparkrish/classify" />
+    <img src="https://img.shields.io/github/issues/deeparkrish/classify" />
+    <img src="https://img.shields.io/github/last-commit/deeparkrish/classify" >       
+  </p>
+  <p align="left"> 
+     <img src="https://img.shields.io/github/languages/top/deeparkrish/classify"/>
+    <img src="https://img.shields.io/badge/MYSQL2-yellow" />
+    <img src="https://img.shields.io/badge/Sequelize-blue"  />
+    <img src="https://img.shields.io/badge/-Handlebars-yellow"/>
+    <img src="https://img.shields.io/badge/-node.js-green" />
+    <img src="https://img.shields.io/badge/-express-red" >
+    <img src="https://img.shields.io/badge/-dtoenv-lightgrey" />
+    <img src="https://img.shields.io/badge/-bulma-orange"/>
+    <img src="https://img.shields.io/badge/-express session-lightgreen"/>
+    <img src="https://img.shields.io/badge/-connect session-pink"/>
+
+  
+
+
+</p>
 ## Description :
 Our goal is for a user who plays/ interested in Hearthstone, to create his own account and personalize according to his favorites . He could comment on cards or view other's comments. He is able log in with a username and pwd , Once authneticated a session is created that allows to query the db.
 
