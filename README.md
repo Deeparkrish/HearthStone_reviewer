@@ -13,18 +13,49 @@
     <img src="https://img.shields.io/badge/-express-red" >
     <img src="https://img.shields.io/badge/-dtoenv-lightgrey" />
     <img src="https://img.shields.io/badge/-bulma-orange"/>
+    <img src="https://img.shields.io/badge/Axios-blue" />
     <img src="https://img.shields.io/badge/-express session-lightgreen"/>
     <img src="https://img.shields.io/badge/-connect session-pink"/>
-
-  
-
-
 </p>
+
 ## Description :
 Our goal is for a user who plays/ interested in Hearthstone, to create his own account and personalize according to his favorites . He could comment on cards or view other's comments. He is able log in with a username and pwd , Once authneticated a session is created that allows to query the db.
+ ## Table of Contents 
+  * [Description](#description)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Process](#process)
+  * [Technologies](#technologies)
+  * [MVCAssociations](#mvcassociations)
+  * [ModelAssociations](#modelassociations)
+  * [ProjectDemo](#projectdemo)
+  * [MockUp](#mockup)
+  * [Testing](#testing)
+  * [ProjectRepo](#projectrepo)
+  * [Contribution](#contribution)
+  
+  
+  ##  Installation
+    npm init
+    npm install  express mysql2  sequelize dotenv
 
-Dependencies installed:
+  ##  Usage
+  ### To access SQL :   
+    mysql -u root -p
+    Enter passwrd when prompted
+    source db/schema.sql
+  ### To Seed database:
+    npm run seed
+  ### Start the app
+    node server.js
 
+  ## License 
+  [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)<br />
+  This app is covered under ISC license.
+  
+
+ ## Technologies 
 - Sequelize ORM sits between the server's API endpoints and the SQL database to translate data between JavaScript and SQL.
 - Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env.
 - Sessions allow our Express.js server to keep track of which user is making a request, and store useful data about them in memory.
