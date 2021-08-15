@@ -67,6 +67,13 @@ Our goal is for a user who plays/ interested in Hearthstone, to create his own a
   * Template engines allow you to write HTML code.Handlebars is a simple templating language. It uses a template and an input object to generate HTML or other    text formats.They are used to deliver front-end app.
   * bcrypt -A library to help you hash passwords.
   
+   ## MVCAssociation
+  
+  
+  ## ModelAssociations
+  ![Webpage]()
+  
+  
   ## Testing
   ####  CRUD operations can be testted using following applications:
     Insomnia core / Postman  or your browser 
