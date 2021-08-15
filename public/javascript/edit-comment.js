@@ -6,7 +6,7 @@ async function editFormHandler(event) {
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
       ];
-
+    console.log(comment_text,id);
     const response = await fetch(`/api/comments/${id}`, {
         method: 'PUT', // PUT method to update the comment 
         body: JSON.stringify({
@@ -18,7 +18,7 @@ async function editFormHandler(event) {
       });
       
       if (response.ok) {
-        document.location.replace('/dashboard/'); // render the dashboard with  updated comment
+        document.location.replace('/dashboard'); // render the dashboard with  updated comment
       } else {
         alert(response.statusText);
       }
