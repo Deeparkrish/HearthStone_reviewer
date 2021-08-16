@@ -10,3 +10,31 @@ but rather pass in all of the properties of that object. --}}
 <h6 class="pb-4 has-text-centered is-italic">No reviews found!</h6>
   {{/each}}
 </ul>
+<div>
+  <ol class="post-list">
+  {{#each comments as |comment|}}
+  <li>
+    <article class="post">
+      <div class="title">
+        <span>({{comment.comment_text}})</span>
+      </div>
+      <div class="meta">
+         by {{comment.user.username}} on
+        {{comment.createdAt}}
+        |
+      </div>
+      {{#if comment.card.data.img}}
+      {{!-- html for img --}}
+      {{else}}
+      {{!-- html for no img --}}
+      {{/if}}
+      <div>
+        {{comment.card.data.name}}
+      </div>
+    </article>
+  </li>
+    {{/each}}
+
+</ol>
+</div>
+{{!-- // This page will have list of commens organized by date ,  topic  and user who made comment  --}}

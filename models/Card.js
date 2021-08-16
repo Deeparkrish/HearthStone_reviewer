@@ -20,10 +20,10 @@ Card.init(
         key: "id",
       },
     },
-        // Need ID from API
+    // Need ID from API
 
     api_id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
   },

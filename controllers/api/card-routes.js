@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 // design and Coding By- Dyravuth Yorn 
+=======
+>>>>>>> feature/cards
 const sequelize = require("../../config/connection");
 const router = require("express").Router();
 const axios = require("axios");
