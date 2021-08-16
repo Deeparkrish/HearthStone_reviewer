@@ -1,4 +1,4 @@
-# HearthStone_ Reviewer
+# HearthStone-Reviewer
   <p align="left">
     <img src="https://img.shields.io/github/repo-size/deeparkrish/classify" />
     <img src="https://img.shields.io/github/issues/deeparkrish/classify" />
