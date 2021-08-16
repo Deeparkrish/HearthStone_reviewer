@@ -1,5 +1,5 @@
-// created by - Dyravuth Yorn 
-// Import Dependencies 
+// created by - Dyravuth Yorn
+// Import Dependencies
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 // Instnatiate the cards
@@ -20,10 +20,16 @@ Card.init(
         key: "id",
       },
     },
-        // Need ID from API
-
     api_id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    card_img: {
+      type: DataTypes.STRING,
+      validate: { isURL: true },
+    },
+    card_name: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
   },
