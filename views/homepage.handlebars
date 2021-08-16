@@ -4,18 +4,19 @@ but rather pass in all of the properties of that object. --}}
 
 <div class="container">
   <header>
-    <h1 class="top-content">Welcome to the<img id="hearthstone-logo" src="/images/hearthstone-logo.png">
-      Review
-    </h1>
+    <h1 class="top-content has-text-centered">Welcome to the<img id="hearthstone-logo"
+        src="/images/hearthstone-logo.png">
+      Review</h1>
   </header>
-  <p class="sub-content">Hearthstone players and admirers alike can come
-    here to learn about all of the cards Hearthstone has to offer</p>
-  </header>
+  <h2 class="sub-content">A resource for Hearthstone players to interact with one another and comment on game play cards
+  </h2>
+
 </div>
 
 
 
 <ul class="post-list">
+
   {{#each comments as |comment|}}
   <li>
     {{> comment-info comment }}
