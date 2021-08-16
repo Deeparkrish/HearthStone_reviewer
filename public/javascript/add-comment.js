@@ -1,13 +1,15 @@
 async function createFormHandler(event) {
     event.preventDefault();
-  
-    const content = document.querySelector('input[name="comment-text"]').value;
-  
+    // Save the data that user entered 
+    const comment_text = document.querySelector('input[name="comment-text"]').value;
+    const card_id = document.querySelector('input[name="card-id"]').value;
+
+
     const response = await fetch(`/api/comments`, {
       method: 'POST',
-      body: JSON.stringify({
-        
-        content
+      body: JSON.stringify({ 
+        comment_text,
+        card_id
       }),
       headers: {
         'Content-Type': 'application/json'

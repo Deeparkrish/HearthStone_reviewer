@@ -38,7 +38,7 @@ router.get('/', withAuth, (req, res) => {
       const comments = dbCommentData.map((comment) =>
         comment.get({ plain: true })
       );
-      res.render("homepage", {
+      res.render("dashboard", {
         comments,
         loggedIn: req.session.loggedIn,
       });
@@ -126,7 +126,7 @@ router.get('/create/', withAuth, (req, res) => {
       .then(dbCommentData => {
         // serialize data before passing to template
         const comments = dbCommentData.map(comment => comment.get({ plain: true }));
-        res.render('create-comment', { comments, loggedIn: true });
+        res.render('add-comment', { comments, loggedIn: true });
       })
       .catch(err => {
         console.log(err);

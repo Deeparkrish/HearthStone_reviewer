@@ -22,7 +22,7 @@ async function signupFormHandler(event) {
       });
       // If validation passes 
       if (response.ok) {
-        document.location.replace('/'); // Go to user Dashboard page 
+        document.location.replace('/dashboard'); // Go to user Dashboard page 
       } else {
         alert(response.statusText); // else alert that invalid input format
       }

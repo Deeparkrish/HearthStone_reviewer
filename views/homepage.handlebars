@@ -3,19 +3,38 @@
 but rather pass in all of the properties of that object. --}}
 <div class="container">
   <header>
-    <h1 class="top-content">Welcome to the <a href="/"><img id="hearthstone-logo"
-          src="assets/images/Hearthstone_logo.png"></a>Card Review</h1>
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="top-content">Welcome to the <a href="/"><img id="hearthstone-logo"
+                src="assets/images/Hearthstone_logo.png"></a>Card Review</h1>
+          <h2 class="sub-content">Hearthstone players and admirers alike can come here to learn about all of the cards
+            Hearthstone has to offer</h2>
+        </div>
+      </div>
+    </section>
   </header>
-  <p>Hearthstone players and admirers alike can come here to learn about all of the cards Hearthstone has to offer
-  </p>
 </div>
+
+
 
 <ul class="post-list">
   {{#each comments as |comment|}}
   <li>
     {{> comment-info comment }}
   </li>
-  {{else}}
-  <h6 class="pb-4 has-text-centered is-italic">No reviews found!</h6>
-  {{/each}}
+  <div class="row" id="card-container">
+    <div class="col-lg-2 col-md-3 col-sm-6" id="card-box">
+      <div class="box gallery">
+        <div class="card">
+          <img class="img-responsive" id="new-card" src=</div>
+        </div>
+      </div>
+    </div>
+
+
+
+    {{else}}
+    <h6 class="pb-4 has-text-centered is-italic">No reviews found!</h6>
+    {{/each}}
 </ul>

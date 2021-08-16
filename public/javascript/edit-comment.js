@@ -1,17 +1,16 @@
 async function editFormHandler(event) {
     event.preventDefault();
     // get the comment text inputted in the text boxes 
-    const content = document.querySelector('input[name="comment-text"]').value;
+    const comment_text = document.querySelector('input[name="comment-text"]').value;
     // split the route path and fetch id 
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
       ];
-
+    console.log(comment_text,id);
     const response = await fetch(`/api/comments/${id}`, {
         method: 'PUT', // PUT method to update the comment 
         body: JSON.stringify({
-            title,
-            content
+            comment_text
         }),
         headers: {
             'Content-Type': 'application/json'
@@ -19,7 +18,7 @@ async function editFormHandler(event) {
       });
       
       if (response.ok) {
-        document.location.replace('/dashboard/'); // render the dashboard with  updated comment
+        document.location.replace('/dashboard'); // render the dashboard with  updated comment
       } else {
         alert(response.statusText);
       }

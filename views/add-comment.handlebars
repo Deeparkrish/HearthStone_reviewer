@@ -3,10 +3,13 @@
   <h2 class="title">Add a comment</h2><hr>
 
   <form class="new-comment-form">
-    
+     <div>
+      <label for="card_id">Card:</label>
+      <input class="text" id="card-id" name="card-id" placeholder="cardid number please"/>
+    </div>
     <div>
       <label for="comment-text">Comment:</label>
-      <input class="textarea is-large" id="post-content" name="comment-text" placeholder="your blog content goes here"/>
+      <input class="textarea is-large" id="comment-content" name="comment-text" placeholder="your comment goes here"/>
     </div>
     <button type="submit" class="button is-primary is-pulled-right">add comment</button>
   </form>
