@@ -6,18 +6,11 @@
 
 
 
-    <img src="https://picsum.photos/200" />;
-    <img src="https://picsum.photos/200" />;
-    <img src="https://picsum.photos/200" />;
-    <img src="https://picsum.photos/200" />;
-    <img src="https://picsum.photos/200" />;
-
-
-
     {{#if comments.length}}
     <div>
         {{#each comments as |comment|}}
         <div>
+            <img src="https://picsum.photos/200" />;
             {{> comment-info comment}}
             <a href="/dashboard/edit/{{comment.id}}"><button class="button mb-5 ml-5"
                     style="background-color:goldenrod">Edit Post</button></a>

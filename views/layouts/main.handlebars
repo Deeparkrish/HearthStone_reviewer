@@ -28,24 +28,22 @@
       </div>
     </div>
   </div>
-  </header>
+</head>
 
+<main>
+  {{{ body }}}
+</main>
 
-  <main>
-    {{{ body }}}
-  </main>
+<footer class="footer-mb has-text-white">
+  <div class="content has-text-centered">
+    <p id=>© 2021 Deepa Krishnan, Dyravuth Yorn, Jessica Kelley, Jorge Roldan</p>
+  </div>
+</footer>
 
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
 
-  <footer class="footer-mb has-text-white">
-    <div class="content has-text-centered">
-      <p id=>© 2021 Deepa Krishnan, Dyravuth Yorn, Jessica Kelley, Jorge Roldan</p>
-    </div>
-  </footer>
-
-  {{#if loggedIn}}
-  <script src="/javascript/logout.js"></script>
-  {{/if}}
-
-  </body>
+</body>
 
 </html>
