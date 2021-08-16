@@ -4,11 +4,24 @@
   text-decoration: none;
   list-style: none;
   text-align: center;
+  background-color: #323232
 }
 
-hero {
-  font-family: 'Courier New', Courier, monospace;
-  font-size:x-large;
+.top-content {
+  font-size: 3rem;
+  text-align: center;
+  color: white;
+}
+
+.sub-content {
+  font-size: 1rem;
+  text-align: center;
+  color: white;
+}
+
+#hearthstone-logo {
+  height: 100px;
+  margin: 0px 10px;
 }
 
 body, html {
@@ -16,15 +29,14 @@ body, html {
   padding: 0;
   margin: 0;
   font-family: sans-serif;
-  color: #333;
-  background-color: #323232;
-  /* rgb(243, 233, 190); */
 }
+
 
 a {
   text-decoration: none;
+  color: #a32228;
   font-weight: bold;
-  color: black;
+  transition: color .1s;
 }
 
 a:hover {
@@ -32,15 +44,21 @@ a:hover {
 }
 
 button {
+  background-color: #225ca3;
   border: 0;
   padding: 1%;
+  color: white;
   font-weight: bold;
   transition: background-color .1s;
   cursor: pointer;
   border-radius: 5px;
 }
 
-.post-list {
+button:hover {
+  background-color: #3486eb;
+}
+
+.comment-list {
   margin: 0;
   padding: 0;
 }
@@ -72,10 +90,9 @@ form label {
 .wrapper {
   width: 100%;
   min-height: 100%;
-  /* max-width: 1200px; */
-  /* margin: 0 auto; */
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
 
 }
 
@@ -85,9 +102,10 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 1%;
-  background-color: rgb(203, 207, 202);
-  margin:0;
-  
+}
+
+header h1 {
+  font-size: 1em;
 }
 
 main {
@@ -113,11 +131,11 @@ main {
   color: #3486eb;
 }
 
-.delete-post-btn {
+.delete-comment-btn {
   background-color: #d41414;
 }
 
-.delete-post-btn:hover {
+.delete-comment-btn:hover {
   background-color: #ff643d;
 }
 
@@ -135,6 +153,15 @@ main {
 .edit-link {
   display: block;
   margin: -1.5% 0 2% 0;
+}
+
+.upvote-btn {
+  background-color: #197d0f;
+  transition: background-color .1s;
+}
+
+.upvote-btn:hover {
+  background-color: #1f9c13;
 }
 
 .comment-form {
@@ -156,37 +183,11 @@ main {
   opacity: .6;
 }
 
-.edit-post-form {
+.new-comment-form input {
+  width: 300px;
+}
+
+.edit-comment-form {
   margin-bottom: 5%;
 }
 
-footer {
-  border-top: 1px solid #ccc;
-  display: flex;
-  justify-content: center;
-  padding: 1%;
-  font-size: 110%;
-}
-footer.footer.rows.pb-2{
-  background-color:#91ad9b;
-  /* rgb(243, 233, 190); */
-
-}
-
-.card {
-    margin-bottom: 1em;
-    margin-top: 1em;
-}
-
-.rows{
-    display:flex;
-    flex-direction: column;
-}
-.navbar-item,
-nav.navbar.mt-2{
-  background-color: rgb(203, 207, 202); 
-  
-}
-.login-link {
-  color: #201110;
-}

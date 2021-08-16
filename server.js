@@ -29,7 +29,7 @@ app.use(express.json());
 //  It takes incoming POST data and converts it to key/value pairings that can be accessed in the req.body object. The extended: true option set inside the method
 // call informs our server that there may be sub-array data nested in it as well
 app.use(express.urlencoded({ extended: true }));
-//app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public")));
 // handlebar - template engine
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");

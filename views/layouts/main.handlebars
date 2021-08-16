@@ -5,46 +5,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hearthstone Review</title>
+  <title>Hearthtone Review</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
   <link rel="stylesheet" href="/stylesheets/style.css">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-</head>
 
 
-<header>
-
-  <nav class="navbar-menu">
-    {{#if loggedIn}}
-    <a href="/" class="button" style="background-color:goldenrod">Homepage</a>
-    <a href="/dashboard" class="button" style="background-color:goldenrod">Dashboard</a>
-    <a href="/dashboard/create/" class="button" style="background-color:goldenrod">Add a comment</a>
-    <button id="logout" class="button" style="background-color:goldenrod">Logout</button>
-    {{else}}
-    <a href="/" class="button" style="background-color:goldenrod">Homepage</a>
-    <a href="/dashboard" class="button" style="background-color:goldenrod">Dashboard</a>
-    <a href="/login" class="button" style="background-color:goldenrod">Login</a>
-    {{/if}}
-  </nav>
-</header>
-
-
-<main>
-
-  <body class="has-background-grey-darker" </body>
-    {{{ body }}}
-</main>
-
-<footer class="footer-mb">
-  <div class="content has-text-centered">
-    <p id=>© 2021 Deepa Krishnan, Dyravuth Yorn, Jessica Kelley, Jorge Roldan</p>
+  <div class="navbar-end">
+    <div class="navbar-item">
+      <div class="buttons">
+        {{#if loggedIn}}
+        <a href="/" class="button" style="background-color:goldenrod">Homepage</a>
+        <a href="/dashboard" class="button" style="background-color:goldenrod">Dashboard</a>
+        <a href="/dashboard/create/" class="button" style="background-color:goldenrod">Add a comment</a>
+        <button id="logout" class="button" style="background-color:goldenrod">Logout</button>
+        {{else}}
+        <a href="/" class="button" style="background-color:goldenrod">Homepage</a>
+        <a href="/dashboard" class="button" style="background-color:goldenrod">Dashboard</a>
+        <a href="/login" class="button" style="background-color:goldenrod">Login</a>
+        {{/if}}
+      </div>
+    </div>
   </div>
-</footer>
 
-{{#if loggedIn}}
-<script src="/javascript/logout.js"></script>
-{{/if}}
+  </div>
+  </header>
 
-</body>
+
+
+  <main>
+    {{{ body }}}
+  </main>
+
+
+
+  <footer class="footer-mb has-text-white">
+    <div class="content has-text-centered">
+      <p id=>© 2021 Deepa Krishnan, Dyravuth Yorn, Jessica Kelley, Jorge Roldan</p>
+    </div>
+  </footer>
+
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
+
+  </body>
 
 </html>
