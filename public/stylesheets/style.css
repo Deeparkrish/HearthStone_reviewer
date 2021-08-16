@@ -19,6 +19,7 @@
 
 .sub-content {
   color: goldenrod;
+  justify-content: center;
 }
 
 #hearthstone-logo {
@@ -34,10 +35,21 @@ body, html {
   padding: 0;
 }
 
-.navbar {
-  border: 0;
+.title {
+  color: white;
 }
 
+.signup-form {
+  color: white;
+}
+
+.column {
+  color: white;
+}
+
+.text {
+  color: white;
+}
 
 a {
   text-decoration: none;
@@ -49,20 +61,14 @@ a:hover {
   color: goldenrod;
 }
 
-button {
+.button {
   background-color: goldenrod;
-  border: 0;
-  padding: 1%;
-  color: goldenrod;
+  color: white;
   font-weight: bold;
-  transition: background-color .1s;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 0px;
 }
 
-button:hover {
-  background-color: goldenrod;
-}
 
 .post-list {
   margin: 0;
@@ -189,8 +195,6 @@ main {
 }
 
 footer {
-  background: #323232;
-  height: 50px;
   width:100%;
   font-size: 10px;
   color: goldenrod;
