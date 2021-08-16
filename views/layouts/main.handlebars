@@ -9,47 +9,42 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
   <link rel="stylesheet" href="/stylesheets/style.css">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  <style>
-    body {
-      background-image: url('/src/assets/images/homepage.jpeg');
-    }
-  </style>
 </head>
 
-<div class="wrapper">
-  <header>
-    <h1>
-      <a href="/">Hearthstone Review</a>
-    </h1>
 
-    <nav class="navbar mt-2" style="background-color:goldenrod"></nav>
+<header>
+
+  <nav class="navbar-menu">
     {{#if loggedIn}}
-    <a href="/" class="button">Homepage</a>
-    <a href="/dashboard" class="button">Dashboard</a>
-    <a href="/dashboard/create/" class="button">Add a comment</a>
-    <button id="logout" class="button">Logout</button>
+    <a href="/" class="button" style="background-color:goldenrod">Homepage</a>
+    <a href="/dashboard" class="button" style="background-color:goldenrod">Dashboard</a>
+    <a href="/dashboard/create/" class="button" style="background-color:goldenrod">Add a comment</a>
+    <button id="logout" class="button" style="background-color:goldenrod">Logout</button>
     {{else}}
-    <a href="/" class="button">Homepage</a>
-    <a href="/dashboard" class="button">Dashboard</a>
-    <a href="/login" class="button">Login</a>
+    <a href="/" class="button" style="background-color:goldenrod">Homepage</a>
+    <a href="/dashboard" class="button" style="background-color:goldenrod">Dashboard</a>
+    <a href="/login" class="button" style="background-color:goldenrod">Login</a>
     {{/if}}
-  </header>
+  </nav>
+</header>
 
 
-  <main>
+<main>
+
+  <body class="has-background-grey-darker" </body>
     {{{ body }}}
-  </main>
+</main>
 
-  <footer class="footer-mb">
-    <div class="content has-text-centered">
-      <p id=>© 2021 Deepa Krishnan, Dyravuth Yorn, Jessica Kelley, Jorge Roldan</p>
-    </div>
-  </footer>
+<footer class="footer-mb">
+  <div class="content has-text-centered">
+    <p id=>© 2021 Deepa Krishnan, Dyravuth Yorn, Jessica Kelley, Jorge Roldan</p>
+  </div>
+</footer>
 
-  {{#if loggedIn}}
-  <script src="/javascript/logout.js"></script>
-  {{/if}}
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
 
-  </body>
+</body>
 
 </html>

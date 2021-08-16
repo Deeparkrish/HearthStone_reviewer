@@ -12,7 +12,7 @@ const commentRoutes = require('./comment-routes');
 
 
 router.use('/users',userRoutes);
-// router.use("/cards", cardRoutes);
+router.use("/cards", cardRoutes);
 router.use('/comments',commentRoutes);
 // router.use('/comments',favRoutes);
 

@@ -1,15 +1,18 @@
 {{!-- Post - partial filename and object --}}
 {{!-- When we pass the post object into the partial, we don't pass the object as is
 but rather pass in all of the properties of that object. --}}
+
 <div class="container">
   <header>
-    <section class="hero">
+    <section class="hero is full-height">
       <div class="hero-body">
         <div class="container">
-          <h1 class="top-content">Welcome to the <a href="/"><img id="hearthstone-logo"
-                src="assets/images/Hearthstone_logo.png"></a>Review</h1>
-          <h2 class="sub-content">Hearthstone players and admirers alike can come here to learn about all of the cards
-            Hearthstone has to offer</h2>
+          <h1 class="top-content has-text-centered has-text-white">Welcome to the<img id="hearthstone-logo"
+              src="/images/hearthstone-logo.png">
+            </a>Review
+          </h1>
+          <h2 class="sub-content has-text-centered has-text-white">Hearthstone players and admirers alike can come
+            here to learn about all of the cards Hearthstone has to offer</h2>
         </div>
       </div>
     </section>
@@ -23,18 +26,9 @@ but rather pass in all of the properties of that object. --}}
   <li>
     {{> comment-info comment }}
   </li>
-  <div class="row" id="card-container">
-    <div class="col-lg-2 col-md-3 col-sm-6" id="card-box">
-      <div class="box gallery">
-        <div class="card">
-          <img class="img-responsive" id="new-card" src=</div>
-        </div>
-      </div>
-    </div>
 
 
-
-    {{else}}
-    <h6 class="pb-4 has-text-centered is-italic">No reviews found!</h6>
-    {{/each}}
+  {{else}}
+  <h6 class="pb-4 has-text-centered is-italic">No reviews found!</h6>
+  {{/each}}
 </ul>
