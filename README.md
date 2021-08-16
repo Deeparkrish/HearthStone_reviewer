@@ -18,7 +18,7 @@
     <img src="https://img.shields.io/badge/-connect session-pink"/>
 </p>
 
-## Description :
+## Description
 Our goal is for a user who plays/ interested in Hearthstone, to create his own account and personalize according to his favorites . He could comment on cards or view other's comments. He is able log in with a username and pwd , Once authneticated a session is created that allows to query the db.
  ## Table of Contents 
   * [Description](#description)
