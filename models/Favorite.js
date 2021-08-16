@@ -11,7 +11,7 @@ Favorite.init(
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
-    }, // commented  as we are using this a through table - Edited by Dyravuth Yorn 
+    }, // delete, because association creates these columns
     // user_id: {
     //   type: DataTypes.INTEGER,
     //   references: {
