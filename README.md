@@ -38,7 +38,7 @@ Our goal is for a user who plays/ interested in Hearthstone, to create his own a
   
   ##  Installation
     npm init
-    npm install  express mysql2  sequelize dotenv
+    npm install  express mysql2  sequelize dotenv axios  connect-session express-session handlebars 
 
   ##  Usage
   ### To access SQL :   
