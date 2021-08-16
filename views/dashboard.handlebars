@@ -1,21 +1,22 @@
 <div class="mb-5 pt-3">
     <a href="/dashboard/create/"><button id="create-comment" class="button is-primary is-pulled-right">Add
-            comment</button></a>
+            Comment</button></a>
 
-    <h2 class="title">Dashboard: Your comments</h2>
-    <hr>
+    <h2 class="title has-text-white has-text-centered">Dashboard: Your comments</h2>
+
 
     {{#if comments.length}}
     <div>
         {{#each comments as |comment|}}
         <div>
             {{> comment-info comment}}
-            <a href="/dashboard/edit/{{comment.id}}"><button class="button mb-5 ml-5 is-warning">Edit post</button></a>
+            <a href="/dashboard/edit/{{comment.id}}"><button class="button mb-5 ml-5"
+                    style="background-color:goldenrod">Edit Post</button></a>
 
         </div>
         {{/each}}
         {{else}}
-        <h6 class="pb-4 has-text-centered is-italic">No comments here!</h6>
+        <h6 class="pb-4 has-text-centered is-italic has-text-white">No comments here!</h6>
         {{/if}}
     </div>
 
