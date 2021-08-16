@@ -23,6 +23,8 @@ const sess = {
 const app = express(); // instance
 const PORT = process.env.PORT || 3001; // assign port number
 
+app.use(express.static("./views/public"));
+
 app.use(express.json());
 //  It takes incoming POST data and converts it to key/value pairings that can be accessed in the req.body object. The extended: true option set inside the method
 // call informs our server that there may be sub-array data nested in it as well
@@ -34,6 +36,7 @@ app.set("view engine", "handlebars");
 // turn on routes
 app.use(session(sess)); // session
 app.use(routes);
+
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {

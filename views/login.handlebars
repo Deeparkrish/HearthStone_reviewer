@@ -1,24 +1,22 @@
 {{!-- User Log in form --}}
 
-<h1>Login Page</h1>
-
 <div class="column">
-<h2 class="title pb-4">login:</h2><hr>
-<form class="login-form">
-  <div>
-    <label for="email-login">Email:</label>
-    <input type="text" id="email-login" />
-  </div>
-  <div>
-    <label for="password-login">Password:</label>
-    <input type="password" id="password-login" />
-  </div>
-  <div>
-    <button type="submit" class="button is-primary">login</button>
-    <a href="/signup"><button type="button" class="button is-warning">Signup</button></a>
-  </div>
-</form>
+  <h2 class="title has-text-centered has-text-white">Login:</h2>
+  <form class="login-form has-text-centered">
+    <div>
+      <label for="email-login">Email:</label>
+      <input type="text" id="email-login" />
+    </div>
+    <div>
+      <label for="password-login">Password:</label>
+      <input type="password" id="password-login" />
+    </div>
+    <div>
+      <button type="submit" class="button" style="background-color:goldenrod">Login</button>
+      <a href="/signup"><button type="button" class="button" style="background-color:goldenrod">Sign Up</button></a>
+    </div>
+  </form>
 </div>
+
 <!-- include javascript file-->
 <script src="/javascript/login.js"></script>
-

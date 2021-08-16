@@ -1,14 +1,9 @@
-<<<<<<< HEAD
-// design and Coding By- Dyravuth Yorn 
-=======
->>>>>>> feature/cards
+// design and Coding By- Dyravuth Yorn
 const sequelize = require("../../config/connection");
 const router = require("express").Router();
 const axios = require("axios");
-
 const { User, Card, Comment, Favorite } = require("../../models");
 const withAuth = require("../../utils/auth");
-
 // Get all comments - based on most recent one
 router.get("/search", (req, res) => {
   const search = req.body.search;
@@ -20,7 +15,6 @@ router.get("/search", (req, res) => {
       "X-RapidAPI-Key": process.env.HS_APIKEY,
     },
   };
-
   axios
     .request(options)
     .then(function (response) {
@@ -32,7 +26,6 @@ router.get("/search", (req, res) => {
       res.json(error);
     });
 });
-
 router.get("/favorites/:id", (req, res) => {
   // query user model using req.params.id
   User.findOne({
@@ -57,9 +50,6 @@ router.get("/favorites/:id", (req, res) => {
     });
   // send client data
 });
-
 router.get("/:id", (req, res) => {});
-
 // must add routes for favorite
-
 module.exports = router;
