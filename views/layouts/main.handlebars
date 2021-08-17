@@ -5,34 +5,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hearthstone Review</title>
-  <link rel="icon" type="image" href="/images/favicon.png">
+  <title>Hearthstone Reviewer</title>
+  <link rel="icon" type="image" href="/src/assets/images/favicon.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
   <link rel="stylesheet" href="/stylesheets/style.css">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-</head>
 
-  {{!-- <div class="navbar-end"> --}}
-    <div class="wrapper">
+  <div class="navbar-end">
     <div class="navbar-item">
-      {{!-- <div class="buttons"> --}}
-        <header class="button">
-          <nav class="navbar mt-2">
+      <div class="buttons">
         {{#if loggedIn}}
         <a href="/" class="button" style="background-color:goldenrod">Homepage</a>
         <a href="/dashboard" class="button" style="background-color:goldenrod">Dashboard</a>
-        <a href="/dashboard/create/" class="button" style="background-color:goldenrod">Add a comment</a>
+        <a href="/dashboard/create/" class="button" style="background-color:goldenrod">Add a Comment</a>
         <button id="logout" class="button" style="background-color:goldenrod">Logout</button>
         {{else}}
         <a href="/" class="button" style="background-color:goldenrod">Homepage</a>
         <a href="/dashboard" class="button" style="background-color:goldenrod">Dashboard</a>
         <a href="/login" class="button" style="background-color:goldenrod">Login</a>
         {{/if}}
-      </nav>
-    </header>
+      </div>
     </div>
-    </div>
-
+  </div>
+</head>
 
 <main>
   {{{ body }}}
@@ -48,5 +43,6 @@
 <script src="/javascript/logout.js"></script>
 {{/if}}
 
+</body>
 
 </html>
