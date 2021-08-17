@@ -146,8 +146,6 @@ router.get("/signup", (req, res) => {
   res.render("sign-up");
 });
 
-<<<<<<< HEAD
-=======
 // card section
 router.get("/", (req, res) => {
   Card.findAll({
@@ -209,5 +207,4 @@ router.get("/", (req, res) => {
 //       res.status(500).json(err);
 //     });
 // });
->>>>>>> 82e512a167cdfaf3206a64ba6c813343eddf1728
 module.exports = router;
