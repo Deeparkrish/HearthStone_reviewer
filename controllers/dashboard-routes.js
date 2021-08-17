@@ -6,7 +6,10 @@ const withAuth = require("../utils/auth"); // import withAuth function
 // Get all comments
 //withauth restricts it to authenticated users only.
 router.get("/", withAuth, (req, res) => {
+<<<<<<< HEAD
   console.log("hello?");
+=======
+>>>>>>> feature/working-design
   Comment.findAll({
     where: {
       // only display comments created by the logged in user.
@@ -136,6 +139,7 @@ router.get("/", (req, res) => {
         },
       },
     ],
+<<<<<<< HEAD
   }).then((dbCardData) => {
     // Upon success, get the cards data and render it on homepage
     const cards = dbCardData.map((card) => card.get({ plain: true }));
@@ -144,6 +148,21 @@ router.get("/", (req, res) => {
       loggedIn: req.session.loggedIn,
     });
   });
+=======
+  })
+    .then((dbCardData) => {
+      // Upon success, get the cards data and render it on homepage
+      const cards = dbCardData.map((card) => card.get({ plain: true }));
+      res.render("dashboard", {
+        cards,
+        loggedIn: req.session.loggedIn,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+>>>>>>> feature/working-design
 });
 
 // card get by id
