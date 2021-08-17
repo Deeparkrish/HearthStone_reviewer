@@ -134,5 +134,66 @@ router.get('/create/', withAuth, (req, res) => {
       });
   });
 
+//   // card section
+// router.get("/", (req, res) => {
+//   Card.findAll({
+//     attributes: ["id", "api_id", "card_name", "card_img"],
+//     include: [
+//       // include the Card details here:
+//       {
+//         model: Comment,
+//         attributes: ["id", "comment_text"],
+//         include: {
+//           model: User,
+//           attributes: ["username"],
+//         },
+//       },
+//     ],
+//   }).then((dbCardData) => {
+//     // Upon success, get the cards data and render it on homepage
+//     const cards = dbCardData.map((card) => card.get({ plain: true }));
+//     res.render("homepage", {
+//       cards,
+//       loggedIn: req.session.loggedIn,
+//     });
+//   });
+// });
+
+// // card get by id
+// router.get("/:id", (req, res) => {
+//   Card.findOne({
+//     where: {
+//       id: req.params.id,
+//     },
+//     attributes: ["id", "card_name", "api_id", "card_img"],
+//     include: [
+//       {
+//         model: Comment,
+//         attributes: ["id", "comment_text"],
+//         include: {
+//           model: User,
+//           attributes: ["username"],
+//         },
+//       },
+//     ],
+//   })
+//     .then((dbCardData) => {
+//       if (!dbCardData) {
+//         res.status(404).json({ message: "Not found " });
+//         return;
+//       }
+//       // serialize the data
+//       const card = dbCardData.get({ plain: true });
+//       // pass data to template
+//       res.render("single-card", {
+//         card,
+//         loggedIn: req.session.loggedIn,
+//       });
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//       res.status(500).json(err);
+//     });
+// });
 
 module.exports = router;
