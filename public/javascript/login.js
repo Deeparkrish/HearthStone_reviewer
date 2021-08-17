@@ -1,6 +1,4 @@
-
-
-// Created by : Deepa 
+// Created by : Deepa
 // Log in Data to save from hTML
 // to include event listener  for buttons -
 // Login form handler - asynchronous func
@@ -24,8 +22,10 @@ async function loginFormHandler(event) {
     });
     // If authentication passes
     if (response.ok) {
+      console.log("world");
       document.location.replace("/"); // Go to user Dashboard page
     } else {
+      console.log("hello");
       alert(response.statusText); // else alert that the authnetication failed
     }
   }
