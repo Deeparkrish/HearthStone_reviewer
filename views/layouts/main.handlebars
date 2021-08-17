@@ -10,11 +10,14 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
   <link rel="stylesheet" href="/stylesheets/style.css">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
 
-
-  <div class="navbar-end">
+  {{!-- <div class="navbar-end"> --}}
+    <div class="wrapper">
     <div class="navbar-item">
-      <div class="buttons">
+      {{!-- <div class="buttons"> --}}
+        <header class="button">
+          <nav class="navbar mt-2">
         {{#if loggedIn}}
         <a href="/" class="button" style="background-color:goldenrod">Homepage</a>
         <a href="/dashboard" class="button" style="background-color:goldenrod">Dashboard</a>
@@ -25,10 +28,11 @@
         <a href="/dashboard" class="button" style="background-color:goldenrod">Dashboard</a>
         <a href="/login" class="button" style="background-color:goldenrod">Login</a>
         {{/if}}
-      </div>
+      </nav>
+    </header>
     </div>
-  </div>
-</head>
+    </div>
+
 
 <main>
   {{{ body }}}
@@ -44,6 +48,5 @@
 <script src="/javascript/logout.js"></script>
 {{/if}}
 
-</body>
 
 </html>

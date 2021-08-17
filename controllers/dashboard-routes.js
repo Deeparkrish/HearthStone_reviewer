@@ -21,7 +21,7 @@ router.get("/", (req, res) => {
   }).then((dbCardData) => {
     // Upon success, get the cards data and render it on homepage
     const cards = dbCardData.map((card) => card.get({ plain: true }));
-    res.render("homepage", {
+    res.render("dashboard", {
       cards,
       loggedIn: req.session.loggedIn,
     });
