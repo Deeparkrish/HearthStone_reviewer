@@ -32,7 +32,7 @@ router.get("/", withAuth, (req, res) => {
       const comments = dbCommentData.map((comment) =>
         comment.get({ plain: true })
       );
-      res.render("dashboard", {
+      res.render("homepage", {
         comments,
         loggedIn: req.session.loggedIn,
       });
@@ -112,74 +112,7 @@ router.get("/create/", withAuth, (req, res) => {
       const comments = dbCommentData.map((comment) =>
         comment.get({ plain: true })
       );
-      res.render("add-comment", { comments, loggedIn: true });
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-
-// card section
-router.get("/", (req, res) => {
-  Card.findAll({
-    attributes: ["id", "api_id", "card_name", "card_img"],
-    include: [
-      // include the Card details here:
-      {
-        model: Comment,
-        attributes: ["id", "comment_text"],
-        include: {
-          model: User,
-          attributes: ["username"],
-        },
-      },
-    ],
-  })
-    .then((dbCardData) => {
-      // Upon success, get the cards data and render it on homepage
-      const cards = dbCardData.map((card) => card.get({ plain: true }));
-      res.render("dashboard", {
-        cards,
-        loggedIn: req.session.loggedIn,
-      });
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-
-// card get by id
-router.get("/:id", (req, res) => {
-  Card.findOne({
-    where: {
-      id: req.params.id,
-    },
-    attributes: ["id", "card_name", "api_id", "card_img"],
-    include: [
-      {
-        model: Comment,
-        attributes: ["id", "comment_text"],
-        include: {
-          model: User,
-          attributes: ["username"],
-        },
-      },
-    ],
-  })
-    .then((dbCardData) => {
-      if (!dbCardData) {
-        res.status(404).json({ message: "Not found " });
-        return;
-      }
-      // serialize the data
-      const card = dbCardData.get({ plain: true });
-      // pass data to template
-      res.render("single-card", {
-        card,
-        loggedIn: req.session.loggedIn,
-      });
+      res.render("create-comment", { comments, loggedIn: true });
     })
     .catch((err) => {
       console.log(err);
