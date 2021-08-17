@@ -41,6 +41,7 @@ router.get("/", withAuth, (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
+<<<<<<< HEAD
 });
 
 //Get comment by id
@@ -129,61 +130,80 @@ router.get("/create/", withAuth, (req, res) => {
 router.get("/", (req, res) => {
   Card.findAll({
     attributes: ["id", "api_id", "card_name", "card_img"],
+=======
+});
+
+//Get comment by id
+router.get("/edit/:id", withAuth, (req, res) => {
+  Comment.findOne({
+    where: {
+      id: req.params.id,
+    },
+    attributes: ["id", "comment_text", "createdAt", "updatedAt"],
+>>>>>>> 22ab2efda4f84cc5dc1184dc74bd24d5a46cf0d1
     include: [
-      // include the Card details here:
       {
-        model: Comment,
-        attributes: ["id", "comment_text"],
+        model: Card,
+        attributes: ["id"],
         include: {
           model: User,
           attributes: ["username"],
         },
       },
+      {
+        model: User,
+        attributes: ["username"],
+      },
     ],
-  }).then((dbCardData) => {
-    // Upon success, get the cards data and render it on homepage
-    const cards = dbCardData.map((card) => card.get({ plain: true }));
-    res.render("dashboard", {
-      cards,
-      loggedIn: req.session.loggedIn,
-    });
   })
-    .catch(err => {
+    .then((dbCommentData) => {
+      if (!dbCommentData) {
+        res.status(404).json({ message: "No comments!" });
+        return;
+      }
+      // serialize the data
+      const comment = dbCommentData.get({ plain: true });
+
+      res.render("edit-comment", {
+        comment,
+        loggedIn: true,
+      });
+    })
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
-// card get by id
-router.get("/:id", (req, res) => {
-  Card.findOne({
+// Create a comment
+router.get("/create/", withAuth, (req, res) => {
+  Comment.findAll({
     where: {
-      id: req.params.id,
+      // use the ID from the session
+      user_id: req.session.user_id,
     },
-    attributes: ["id", "card_name", "api_id", "card_img"],
+    attributes: ["id", "comment_text", "createdAt", "updatedAt"],
     include: [
       {
-        model: Comment,
-        attributes: ["id", "comment_text"],
+        model: Card,
+        attributes: ["id"],
         include: {
           model: User,
           attributes: ["username"],
         },
       },
+      {
+        model: User,
+        attributes: ["username"],
+      },
     ],
   })
-    .then((dbCardData) => {
-      if (!dbCardData) {
-        res.status(404).json({ message: "Not found " });
-        return;
-      }
-      // serialize the data
-      const card = dbCardData.get({ plain: true });
-      // pass data to template
-      res.render("single-card", {
-        card,
-        loggedIn: req.session.loggedIn,
-      });
+    .then((dbCommentData) => {
+      // serialize data before passing to template
+      const comments = dbCommentData.map((comment) =>
+        comment.get({ plain: true })
+      );
+      res.render("add-comment", { comments, loggedIn: true });
     })
     .catch((err) => {
       console.log(err);

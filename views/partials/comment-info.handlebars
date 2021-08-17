@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {{!-- Coding and testing :Deepa
 <div class="card mb-6">
     <header class="card-header card-header-title has-background-grey-lighter">
@@ -19,23 +20,19 @@
     </div>
 </div> --}}
 
+=======
+>>>>>>> 22ab2efda4f84cc5dc1184dc74bd24d5a46cf0d1
 {{!-- Coding and testing :Deepa --}}
 <div class="card mb-6">
     <header class="card-header card-header-title has-background-grey-lighter">
-        <p class="has-text-centered">{{card.card_name}}</p>
+        <p class="is-block has-text-centered is-full"> {{card.card_name}} </p>
         <div class="column">
             <p class="has-text-primary-light"></p>
             <a href="/comment/{{id}}" class="has-text-black is-capitalized is-pulled-left">{{card_id}} </a>
         </div>
-        <div class="column">
-            <span class=""> </span>
-        </div>
     </header>
     <div class="card-content">
-        {{! API call here can remove the card id if we want}}
-        <div> Card Name: {{card.card_name}} </div>
-        <img {{! We can pass through the image object within the fetch card request and it will populate as we want}}
-            src= {{card.card_img}}  {{!"https://d15f34w2p8l1cc.cloudfront.net/hearthstone/cf014c0c9363f70cb7e4f7f7c4086ab42bc5d2afecf421f35b9c87c81943d9d4.png" />}}
+        <img src={{card.card_img}} />
         <div class="content has-text-justified">
             {{comment_text}}
         </div>
