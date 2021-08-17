@@ -1,9 +1,8 @@
-{{!-- Coding and testing :Deepa
+{{!-- Coding and testing :Deepa --}}
 <div class="card mb-6">
     <header class="card-header card-header-title has-background-grey-lighter">
-        <p class="has-text-centered" Card Title</p>
         <div class="column">
-            <p class="has-text-primary-light"></p>
+            <p class=" has-text-primary-light"></p>
             <a href="/comment/{{id}}" class="has-text-black is-capitalized is-pulled-left">{{card_id}} </a></p>
         </div>
         <div class="column">
@@ -11,34 +10,10 @@
         </div>
     </header>
     <div class="card-content">
-        <img src="https://picsum.photos/200" />
         <div class="content has-text-justified">
             {{comment_text}}
         </div>
         <div class="is-pulled-right">
-            <b>{{user.username}}</b>
-            | {{format_date createdAt}}
-        </div>
-    </div>
-</div> --}}
-
-{{!-- Coding and testing :Deepa --}}
-<div class="card mb-6">
-    <header class="card-header card-header-title has-background-grey-lighter">
-        <p class="is-block has-text-centered is-full"> {{card.card_name}} </p>
-        <div class="column">
-            <p class="has-text-primary-light"></p>
-            <a href="/comment/{{id}}" class="has-text-black is-capitalized is-pulled-left">{{card_id}} </a>
-        </div>
-    </header>
-    <div class="card-content">
-        
-        {{! API call here can remove the card name if we want}}
-        <div class="has-text-weight-bold">Card Name: {{card.card_name}}</div>
-        <img src={{card.card_img}} width="200" height="200"/>
-
-        <div class="has-text-left">{{comment_text}}</div>
-        <div class="is-pulled-right has-text-white">
             <b>{{user.username}}</b>
             | {{format_date createdAt}}
         </div>
