@@ -4,7 +4,8 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hearthtone Review</title>
+  <title>Hearthstone Review</title>
+  <link rel="icon" type="image" href="/images/favicon.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
   <link rel="stylesheet" href="/stylesheets/style.css">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
@@ -27,16 +28,21 @@
       </div>
     </div>
   </div>
+</head>
 
-  </head>
+<main>
+  {{{ body }}}
+</main>
 
+<footer class="footer-mb has-text-white">
+  <div class="content has-text-centered">
+    <p id=>© 2021 Deepa Krishnan, Dyravuth Yorn, Jessica Kelley, Jorge Roldan</p>
+  </div>
+</footer>
 
-
-  <main>
-    {{{ body }}}
-  </main>
-
-
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
 
   <footer class="footer-mb has-text-dark">
     <div class="content has-text-centered">
