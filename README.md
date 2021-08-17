@@ -29,7 +29,6 @@ Our goal is for a user who plays/ interested in Hearthstone, to create his own a
   * [Technologies](#technologies)
   * [MVCAssociations](#mvcassociations)
   * [ModelAssociations](#modelassociations)
-  * [ProjectDemo](#projectdemo)
   * [MockUp](#mockup)
   * [Testing](#testing)
   * [ProjectRepo](#projectrepo)
@@ -71,7 +70,7 @@ Our goal is for a user who plays/ interested in Hearthstone, to create his own a
   
   
   ## ModelAssociations
-  ![Webpage](https://github.com/Deeparkrish/HearthStone_reviewer/blob/develop/src/assets/images/Model%20association.png)
+  ![Webpage](https://github.com/Deeparkrish/hearthstone_reviewer/blob/develop/src/assets/images/Screen%20Shot%202021-08-17%20at%2012.06.07%20PM.png)
   
   ## Process 
    When an end-user - a hearthstone fan visits a  CMS-style blog site, 
@@ -90,6 +89,9 @@ Our goal is for a user who plays/ interested in Hearthstone, to create his own a
     and the contents entered are saved as a new comment.
   * The user can delete or update his comment and the dashboard is updated accordingly.
   * the user is logged out of the site either by clicking logout button or if the session is inactive for a long time.
+ 
+ ## Mockup
+ ![Webpage](https://github.com/Deeparkrish/hearthstone_reviewer/blob/develop/src/assets/images/image.png)
     
   ## Testing
   ####  CRUD operations can be testted using following applications:
