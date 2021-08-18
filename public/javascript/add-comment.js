@@ -22,5 +22,7 @@ async function createFormHandler(event) {
       alert(response.statusText);
     }
   }
-  
-  document.querySelector('.new-comment-form').addEventListener('submit', createFormHandler);
+  var el=
+  document.querySelector('.new-comment-form');
+  if(el)
+  el.addEventListener('submit', createFormHandler);
