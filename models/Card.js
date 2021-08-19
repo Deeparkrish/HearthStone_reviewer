@@ -16,7 +16,7 @@ Card.init(
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "card",
+        model: "user",
         key: "id",
       },
     },
