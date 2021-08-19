@@ -31,7 +31,11 @@
 
 <main>
   {{{ body }}}
+</body>
 </main>
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
 
 <footer class="footer-mb has-text-white">
   <div class="content has-text-centered">
@@ -39,10 +43,5 @@
   </div>
 </footer>
 
-{{#if loggedIn}}
-<script src="/javascript/logout.js"></script>
-{{/if}}
-
-</body>
 
 </html>

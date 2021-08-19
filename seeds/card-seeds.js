@@ -1,7 +1,7 @@
 const sequelize = require("../config/connection");
 const { Card } = require("../models");
 
-const carddata = [
+const cardData = [
   {
     user_id: 1,
     api_id: "HERO_02mbp",
@@ -38,6 +38,6 @@ const carddata = [
     card_name: "A Tale of Kings",
   },
 ];
-const seedCards = () => Card.bulkCreate(carddata);
+const seedCards = () => Card.bulkCreate(cardData);
 
 module.exports = seedCards;
