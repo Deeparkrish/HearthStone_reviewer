@@ -10,10 +10,10 @@
     <div>
         {{#each comments as |comment|}}
         <div>
+            
             {{> comment-info comment}}
             <a href="/dashboard/edit/{{comment.id}}"><button class="button mb-5 ml-5"
-                    style="background-color:goldenrod">Edit Post</button></a>
-
+                    style="background-color:goldenrod">Update</button></a>
         </div>
         {{/each}}
         {{else}}
