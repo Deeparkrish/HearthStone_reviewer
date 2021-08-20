@@ -92,7 +92,8 @@ Our goal is for a user who plays/ interested in Hearthstone, to create his own a
   * the user is logged out of the site either by clicking logout button or if the session is inactive for a long time.
  
  ## Mockup
- ![Webpage](https://github.com/Deeparkrish/hearthstone_reviewer/blob/develop/src/assets/images/image.png)
+ ![Webpage](https://github.com/Deeparkrish/hearthstone_reviewer/blob/main/src/assets/images/homepagemockup.png)
+ ![Webpage](https://github.com/Deeparkrish/hearthstone_reviewer/blob/main/src/assets/images/dahsboardmockup.png)
     
   ## Testing
   ####  CRUD operations can be testted using following applications:
