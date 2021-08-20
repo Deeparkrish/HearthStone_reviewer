@@ -100,7 +100,7 @@ Our goal is for a user who plays/ interested in Hearthstone, to create his own a
     link : http://localhost:3000/api/<routes>
   
   ##  ProjectRepo 
-  Heroku: https://dashboard.heroku.com/apps/hearthstone-reviewer
+  Heroku: https://hearthstone-reviewer.herokuapp.com/
 
   ## Contribution
   Created with ❤️ by [Deepa Krishnan, Dyravuth Yorn, Jessica Kelley and Jorge Roldan](https://github.com/DeeparKrish/README-generator)
