@@ -2,14 +2,14 @@
 <div class="card mb-6">
     <header class="card-header card-header-title has-background-grey-lighter">
         <p class="is-block has-text-centered is-full">{{card.card_name}}</p>
-        <div class="column">
+        <div class="column block">
             <p class="has-text-primary-light"></p>
             <a href="/comment/{{id}}" class="has-text-black is-capitalized is-pulled-left"></a>
         </div>
     </header>
-    <div class="card-content">
-        <img src={{card.card_img}} />
-        <div class="content has-text-justified">
+    <div class="card-content">  
+        <div class="content has-text-centered is-italic">
+            <img class ="card-image" src={{card.card_img}} />
             {{comment_text}}
         </div>
         <div class="is-pulled-right">

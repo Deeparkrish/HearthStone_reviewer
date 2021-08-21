@@ -162,3 +162,11 @@ main {
 .edit-comment-form {
   margin-bottom: 5%;
 }
+.card-image {
+  
+  /* vertical-align:middle;
+  margin:0px 50px */
+  height: 300px;;
+  width:200px;
+ 
+}

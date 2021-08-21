@@ -24,4 +24,6 @@ async function editFormHandler(event) {
       }
   }
 // Event Listener when subnit button is clicked 
-  document.querySelector('.edit-comment-form').addEventListener('submit', editFormHandler);
+  var el =document.querySelector('.edit-comment-form');
+  if(el)
+  el.addEventListener('submit', editFormHandler);
