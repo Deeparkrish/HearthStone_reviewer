@@ -68,7 +68,7 @@ Our goal is for a user who plays/ interested in Hearthstone, to create his own a
   * bcrypt -A library to help you hash passwords.
   
    ## MVCAssociation
-  
+   ![Webpage](https://github.com/Deeparkrish/hearthstone_reviewer/blob/main/src/assets/images/MVC.jpeg)
   
   ## ModelAssociations
   ![Webpage](https://github.com/Deeparkrish/hearthstone_reviewer/blob/develop/src/assets/images/Screen%20Shot%202021-08-17%20at%2012.06.07%20PM.png)
