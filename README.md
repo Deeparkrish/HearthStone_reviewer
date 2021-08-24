@@ -106,7 +106,8 @@ Our goal is for a user who plays/ interested in Hearthstone, to create his own a
   ## Contribution
   Created with ❤️ by [Deepa Krishnan, Dyravuth Yorn, Jessica Kelley and Jorge Roldan](https://github.com/DeeparKrish/README-generator)
   </br>
-  Credits :MVC - Controller module <br>
+  <b>Credits:</b>
+  MVC - Controller module <br>
   The JSON files contain data that is Copyright © Blizzard Entertainment - All Rights Reserved<br>
   This website is not affiliated with Blizzard Entertainment.
 
