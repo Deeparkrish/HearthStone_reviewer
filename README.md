@@ -108,8 +108,8 @@ Our goal is for a user who plays/ interested in Hearthstone, to create his own a
   </br>
   <b>Credits:</b>
   MVC - Controller module <br>
-  The JSON files contain data that is Copyright © Blizzard Entertainment - All Rights Reserved<br>
-  This website is not affiliated with Blizzard Entertainment.
+  <i>The JSON files contain data that is Copyright © Blizzard Entertainment - All Rights Reserved<br>
+  This website is not affiliated with Blizzard Entertainment.</i>
 
 
 
